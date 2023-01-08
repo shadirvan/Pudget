@@ -1,6 +1,6 @@
 # budget_tracker
 
-A new Flutter project.
+A simple budget tracking app with scrollable list, cards and charts
 
 ## Getting Started
 
