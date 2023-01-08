@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
-import '../models/transaction.dart';
 import 'package:intl/intl.dart';
+
+import '../models/transaction.dart';
 
 class TransactionList extends StatelessWidget {
   final List<Transaction> transactions;
 
   TransactionList(this.transactions);
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 293,
+      height: 300,
       child: ListView.builder(
-        itemBuilder: (context, index) {
+        itemBuilder: (ctx, index) {
           return Card(
             child: Row(
-              children: [
+              children: <Widget>[
                 Container(
                   margin: EdgeInsets.symmetric(
                     vertical: 10,
@@ -26,6 +28,7 @@ class TransactionList extends StatelessWidget {
                       width: 2,
                     ),
                   ),
+                  padding: EdgeInsets.all(10),
                   child: Text(
                     '\$${transactions[index].amount.toStringAsFixed(2)}',
                     style: TextStyle(
@@ -34,11 +37,10 @@ class TransactionList extends StatelessWidget {
                       color: Colors.purple,
                     ),
                   ),
-                  padding: EdgeInsets.all(10),
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                  children: <Widget>[
                     Text(
                       transactions[index].title,
                       style: TextStyle(
@@ -48,10 +50,12 @@ class TransactionList extends StatelessWidget {
                     ),
                     Text(
                       DateFormat.yMMMd().format(transactions[index].date),
-                      style: TextStyle(color: Colors.grey),
-                    )
+                      style: TextStyle(
+                        color: Colors.grey,
+                      ),
+                    ),
                   ],
-                )
+                ),
               ],
             ),
           );
