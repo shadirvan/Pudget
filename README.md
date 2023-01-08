@@ -1,4 +1,4 @@
-# budget_tracker
+# Pudget
 
 A new Flutter project.
 
